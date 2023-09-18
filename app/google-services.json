@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "817041723310",
+    "project_id": "hitalk-bf20a",
+    "storage_bucket": "hitalk-bf20a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817041723310:android:4c3ba754714252a527423f",
+        "android_client_info": {
+          "package_name": "dev.hasangurbuz.hitalk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDXWybAUHltU_QvuoED_sYNYpzW5EGIf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
