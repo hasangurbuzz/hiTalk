@@ -31,6 +31,6 @@ HiTalk is a realtime chat application designed to connect you with friends no ma
 
 ScreenShots:
 <p align="center">
-![Sign Up](/ss/signup.png)
+![Sign Up](ss/signup.png)
 </p>
 
