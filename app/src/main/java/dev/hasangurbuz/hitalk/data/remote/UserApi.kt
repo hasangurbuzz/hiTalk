@@ -12,4 +12,6 @@ interface UserApi {
     suspend fun findById(userId: String): Response<UserDto>
 
     suspend fun findById(userIdList: List<String>): Response<List<UserDto>>
+
+    suspend fun findByPhone(phoneNumberList: List<String>): Response<List<UserDto>>
 }

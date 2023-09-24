@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.contact.ContactFragment">
+    tools:context=".presentation.fragments.ContactFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_contacts"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_container_user"/>
+        tools:listitem="@layout/item_container_user" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

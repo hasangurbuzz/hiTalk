@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.sms.SmsFragment">
+    tools:context=".presentation.fragments.SmsFragment">
 
     <TextView
         android:id="@+id/text_info"
@@ -19,14 +19,14 @@
 
     <TextView
         android:id="@+id/text_seconds"
-        app:layout_constraintTop_toBottomOf="@id/text_info"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="12pt"
-        tools:text="59"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info"
+        tools:text="59" />
 
 
     <EditText
@@ -55,6 +55,8 @@
         android:background="@drawable/background_button"
         android:backgroundTint="@color/primary"
         android:clickable="true"
+        android:elevation="8dp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

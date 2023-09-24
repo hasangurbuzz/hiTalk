@@ -4,14 +4,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.conversation.ConversationFragment">
+    tools:context=".presentation.fragments.ConversationFragment">
 
+    <TextView
+        android:id="@+id/text_not_found_conversation"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Press + to start a chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_conversations"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_container_conversation"/>
+        tools:listitem="@layout/item_container_conversation" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

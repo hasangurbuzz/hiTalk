@@ -6,6 +6,7 @@ plugins {
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
     id("kotlin-parcelize")
+    id("io.realm.kotlin")
 }
 
 android {
@@ -47,7 +48,6 @@ android {
 
 dependencies {
 
-    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
     val countryPickerVersion = "2.6.0"
     val fragmentVersion = "1.6.1"
     val navVersion = "2.7.2"
@@ -55,6 +55,10 @@ dependencies {
     val activityVersion = "1.7.2"
     val lifecycleVersion = "2.6.1"
     val firebaseBoMVersion = "32.2.3"
+    val realmVersion = "1.11.0"
+
+    //Realm
+    implementation("io.realm.kotlin:library-base:${realmVersion}")
 
     //Glide
     val glideVersion = "4.16.0"
@@ -64,6 +68,7 @@ dependencies {
     //Firebase
     implementation(platform("com.google.firebase:firebase-bom:${firebaseBoMVersion}"))
     implementation("com.google.firebase:firebase-messaging-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
 

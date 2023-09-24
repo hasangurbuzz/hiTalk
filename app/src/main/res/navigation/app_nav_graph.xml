@@ -7,33 +7,45 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="dev.hasangurbuz.hitalk.ui.conversation.ConversationFragment"
+        android:name="dev.hasangurbuz.hitalk.presentation.fragments.ConversationFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_conversation" >
+        tools:layout="@layout/fragment_conversation">
         <action
             android:id="@+id/action_homeFragment_to_contactFragment"
-            app:destination="@id/contactFragment" />
+            app:destination="@id/contactFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
         <action
             android:id="@+id/action_homeFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
+            app:destination="@id/chatFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/contactFragment"
-        android:name="dev.hasangurbuz.hitalk.ui.contact.ContactFragment"
+        android:name="dev.hasangurbuz.hitalk.presentation.fragments.ContactFragment"
         android:label="fragment_contact"
-        tools:layout="@layout/fragment_contact" >
+        tools:layout="@layout/fragment_contact">
         <action
             android:id="@+id/action_contactFragment_to_chatFragment"
             app:destination="@id/chatFragment"
-            app:popUpTo="@id/homeFragment" />
+            app:popUpTo="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/chatFragment"
-        android:name="dev.hasangurbuz.hitalk.ui.chat.ChatFragment"
+        android:name="dev.hasangurbuz.hitalk.presentation.fragments.ChatFragment"
         android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" >
+        tools:layout="@layout/fragment_chat">
         <argument
             android:name="Conversation"
-            app:argType="dev.hasangurbuz.hitalk.data.model.Conversation" />
+            app:argType="dev.hasangurbuz.hitalk.domain.model.Conversation" />
     </fragment>
 </navigation>

@@ -4,14 +4,13 @@ import android.net.Uri
 import com.google.firebase.storage.FirebaseStorage
 import dev.hasangurbuz.hitalk.data.remote.ImageApi
 import dev.hasangurbuz.hitalk.data.remote.model.Response
-import dev.hasangurbuz.hitalk.remote.firebase.FirebaseConstants
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class ImageApiImpl
-    @Inject constructor(private val firebaseStorage: FirebaseStorage): ImageApi {
+@Inject constructor(private val firebaseStorage: FirebaseStorage) : ImageApi {
 
 
     override suspend fun upload(

@@ -1,19 +1,23 @@
 package dev.hasangurbuz.hitalk.data.remote.impl
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import dev.hasangurbuz.hitalk.data.remote.MessageApi
+import dev.hasangurbuz.hitalk.data.remote.impl.FirebaseConstants.COLLECTION_MESSAGES
+import dev.hasangurbuz.hitalk.data.remote.impl.FirebaseConstants.KEY_CONVERSATION_ID
+import dev.hasangurbuz.hitalk.data.remote.impl.FirebaseConstants.KEY_ID
 import dev.hasangurbuz.hitalk.data.remote.model.MessageDto
 import dev.hasangurbuz.hitalk.data.remote.model.Response
-import dev.hasangurbuz.hitalk.remote.firebase.FirebaseConstants.COLLECTION_MESSAGES
-import dev.hasangurbuz.hitalk.remote.firebase.FirebaseConstants.KEY_CONVERSATION_ID
-import dev.hasangurbuz.hitalk.remote.firebase.FirebaseConstants.KEY_ID
+import dev.hasangurbuz.hitalk.data.remote.snapshotFlow
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class MessageApiImpl
-    @Inject constructor(private val firestore: FirebaseFirestore): MessageApi {
+@Inject constructor(private val firestore: FirebaseFirestore) : MessageApi {
 
     private val messageCollection = firestore.collection(COLLECTION_MESSAGES)
 
@@ -64,6 +68,17 @@ class MessageApiImpl
         } catch (_: Exception) {
             return Response.Failed
         }
+    }
+
+    override fun listen(conversationId: String): Flow<List<MessageDto>> {
+        return messageCollection
+            .whereEqualTo(KEY_CONVERSATION_ID, conversationId)
+            .orderBy("timestamp", Query.Direction.ASCENDING)
+            .snapshotFlow()
+            .map { value ->
+                value.toObjects(MessageDto::class.java)
+            }
+
     }
 
 

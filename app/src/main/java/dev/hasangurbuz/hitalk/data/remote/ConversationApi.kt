@@ -14,7 +14,9 @@ interface ConversationApi {
 
     suspend fun findById(conversationId: String): Response<ConversationDto>
 
-    fun listenLatest(userId: String) : Flow<List<ConversationDto>>
+    suspend fun listen(userId: String): Flow<List<ConversationDto>>
+
+    suspend fun findByParticipants(participantIdList: List<String>): Response<ConversationDto>
 
 
 }

@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
     android:background="@drawable/border_radius"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
     android:padding="5dp">
 
 
@@ -21,40 +22,40 @@
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Material3.CornerSize50Percent" />
 
     <LinearLayout
-        app:layout_constraintStart_toEndOf="@id/image_profile"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/text_last_message_time"
-        android:orientation="vertical">
+        app:layout_constraintStart_toEndOf="@id/image_profile"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:textSize="7pt"
-            android:textStyle="bold"
-            android:maxLines="1"
             android:id="@+id/text_conversation_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="7pt"
+            android:textStyle="bold"
             tools:text="Username username" />
 
         <TextView
-            android:maxLength="30"
-            android:textSize="6pt"
-            android:maxLines="1"
-            tools:text="Message message message message"
             android:id="@+id/text_last_message"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="30"
+            android:maxLines="1"
+            android:textSize="6pt"
+            tools:text="Message message message message" />
     </LinearLayout>
 
     <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:maxLines="1"
-        tools:text="19:00"
         android:id="@+id/text_last_message_time"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="19:00" />
 </androidx.constraintlayout.widget.ConstraintLayout>

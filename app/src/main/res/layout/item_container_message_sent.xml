@@ -18,7 +18,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:maxWidth="250dp"/>
+        android:maxWidth="250dp" />
 
     <TextView
         android:textStyle="bold"
