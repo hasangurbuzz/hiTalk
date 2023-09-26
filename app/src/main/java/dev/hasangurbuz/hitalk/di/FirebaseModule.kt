@@ -16,7 +16,10 @@ object FirebaseModule {
     @Singleton
     @Provides
     fun provideFirebaseAuth(): FirebaseAuth {
-        return FirebaseAuth.getInstance()
+        val auth = FirebaseAuth.getInstance()
+        auth.useAppLanguage()
+        auth.firebaseAuthSettings.forceRecaptchaFlowForTesting(true)
+        return auth
     }
 
     @Singleton

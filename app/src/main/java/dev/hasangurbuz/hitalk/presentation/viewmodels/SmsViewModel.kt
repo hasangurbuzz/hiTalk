@@ -15,7 +15,7 @@ class SmsViewModel : ViewModel() {
 
     init {
         viewModelScope.launch {
-            for (i in 60 downTo 0) {
+            for (i in 90 downTo 0) {
                 _countdownState.emit(i)
                 delay(1000L)
             }
